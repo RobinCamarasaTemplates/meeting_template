@@ -1,7 +1,16 @@
 {
-    "repo_name": "repo",
-    "description": "Description",
+    "meeting_type": "Meeting_type",
+    "meeting_date": "{% now 'utc', '%Y-%m-%d' %}",
+    "meeting_hour": "{% now 'utc', '%H:%M' %}",
 
-    "author_name": "Author name : ",
-    "author_github": "Your github : "
+    "repo_name": "{{ cookiecutter.date }}-{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
+
+    "author_names": "Author names",
+    "author_institutions": "Author institutions",
+
+    "author_name": "Your name",
+    "author_mail": "Your mail",
+    "author_github": "Your github",
+    "author_scholar": "Your sholar",
+    "author_website": "Your website"
 }
