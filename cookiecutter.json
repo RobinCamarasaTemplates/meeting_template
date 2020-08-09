@@ -5,7 +5,7 @@
     "meeting_place": "Meeting place",
     "meeting_presents": "Present person",
 
-    "repo_name": "{{ cookiecutter.meeting_date }}-{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
+    "repo_name": "{{ cookiecutter.meeting_date }}-{{ cookiecutter.meeting_type.lower().replace(' ', '_') }}",
 
     "author_names": "Author names",
     "author_institutions": "Author institutions",
