@@ -1,9 +1,11 @@
 {
-    "meeting_type": "Meeting_type",
+    "meeting_type": "Meeting type",
     "meeting_date": "{% now 'utc', '%Y-%m-%d' %}",
     "meeting_hour": "{% now 'utc', '%H:%M' %}",
+    "meeting_place": "Meeting place",
+    "meeting_presents": "Present person",
 
-    "repo_name": "{{ cookiecutter.date }}-{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
+    "repo_name": "{{ cookiecutter.meeting_date }}-{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
 
     "author_names": "Author names",
     "author_institutions": "Author institutions",

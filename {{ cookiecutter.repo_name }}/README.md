@@ -1,12 +1,12 @@
-# {{ cookiecutter.meeting_type }} : {{ cookiecutter.date }}
+# {{ cookiecutter.meeting_type }} : {{ cookiecutter.meeting_date }}
 
 # Meeting information
 
 ### Author : {{ cookiecutter.author_name }}
-### Present : {{ cookiecutter.presents }}
-### Place : {{ cookiecutter.place }}
-### Time : {{ cookiecutter.date }}
-### Hour : {{ cookie.hour }}
+### Present : {{ cookiecutter.meeting_presents }}
+### Place : {{ cookiecutter.meeting_place }}
+### Time : {{ cookiecutter.meeting_date }}
+### Hour : {{ cookiecutter.meeting_hour }}
 
 # Content
 

@@ -27,12 +27,24 @@ import subprocess
 ROOT = Path(__file__).parents[1]
 TESTS_ROOT = ROOT / 'test_output'
 EXTRA_CONTEXT = {
-    "repo_name": "repo",
-    "description": "Description",
+    "meeting_type": "Test meeting",
+    "meeting_date": "{% now 'utc', '%Y-%m-%d' %}",
+    "meeting_hour": "{% now 'utc', '%H:%M' %}",
+    "meeting_place": "Virtual",
+
+    "presents": "John, Doe",
+
+    "repo_name": "{{ cookiecutter.meeting_date }}-{{ cookiecutter.meeting_type.lower().replace(' ', '_') }}",
+
+
+    "author_names": "John Doe, Doe John",
+    "author_institutions": "Lambda company, Omega company",
 
     "author_name": "John Doe",
-    "author_position": "Intern",
-    "author_github": "https://github.com/JohnDoe"
+    "author_mail": "john.doe@lambda.com",
+    "author_github": "https://github.com/JohnDoe",
+    "author_scholar": "https://google.scholar",
+    "author_website": "https://johndoe.github.io"
 }
 
 
@@ -59,5 +71,27 @@ def test_generate_project() -> None:
     )
 
     # Test project generation
-    project_name = EXTRA_CONTEXT['repo_name']
-    assert (TESTS_ROOT / project_name).exists()
+    repo_name = '{}-{}'.format(
+        datetime.now().strftime('%Y-%m-%d'),
+        EXTRA_CONTEXT['meeting_type'].lower().replace(' ', '_')
+    )
+    assert (TESTS_ROOT / repo_name).exists()
+    assert (TESTS_ROOT / repo_name / 'README.md').exists()
+    files = [
+        'commands.sty',
+        'images',
+        'presentation.tex',
+        'theme.sty',
+    ]
+    for file_ in files:
+        assert (
+            TESTS_ROOT / repo_name / 'presentation' / file_
+        ).exists()
+
+    process = subprocess.Popen(
+        ['pdflatex', 'presentation.tex'],
+        cwd= (TESTS_ROOT / repo_name / 'presentation').resolve()
+    )
+    process.wait()
+    assert process.returncode == 0
+
