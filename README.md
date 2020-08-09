@@ -1,6 +1,6 @@
-# meeting
+# Meeting template
 
-Cookiecutter to generate meeting note
+Cookiecutter project to generate meeting notes and latex presentation for the meeting.
 
 ## Requirements
  - Python 2.7 or 3.5
