@@ -26,7 +26,7 @@ $ cookiecutter https://github.com/RobinCamarasaTemplates/meeting_template
 ## To contribute
 - Clone the repository
 ``` bash
-$ cookiecutter https://github.com/RobinCamarasaTemplates/meeting_template
+$ git clone https://github.com/RobinCamarasaTemplates/meeting_template
 ```
 - Install the requirement
 ```bash
