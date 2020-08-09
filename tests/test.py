@@ -77,6 +77,7 @@ def test_generate_project() -> None:
     )
     assert (TESTS_ROOT / repo_name).exists()
     assert (TESTS_ROOT / repo_name / 'README.md').exists()
+    assert (TESTS_ROOT / repo_name / '.gitignore').exists()
     files = [
         'commands.sty',
         'images',

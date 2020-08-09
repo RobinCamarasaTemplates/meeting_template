@@ -18,17 +18,21 @@ $ conda install cookiecutter
 ```
 
 
-## To start a new project, run
+## To start a new meeting, run
 ``` bash
-$ cookiecutter 
+$ cookiecutter https://github.com/RobinCamarasaTemplates/meeting_template
 ```
 
 ## To contribute
+- Clone the repository
+``` bash
+$ cookiecutter https://github.com/RobinCamarasaTemplates/meeting_template
+```
 - Install the requirement
 ```bash
 $ pip install -r requirements.txt
 ```
-
+- Modify the project
 - Make sure that your modification works
 ```bash
 $ pytest tests/test.py
